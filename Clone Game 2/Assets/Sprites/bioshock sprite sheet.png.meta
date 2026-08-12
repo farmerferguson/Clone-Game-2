@@ -1,0 +1,695 @@
+fileFormatVersion: 2
+guid: 3df4d9fe1d1017c4f94b9ca8155c1379
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6383675007314697170
+    second: bioshock sprite sheet_0
+  - first:
+      213: 3432135592199751803
+    second: bioshock sprite sheet_1
+  - first:
+      213: -2798007857312626203
+    second: bioshock sprite sheet_2
+  - first:
+      213: 8675592754034008058
+    second: bioshock sprite sheet_3
+  - first:
+      213: 8703057550518587875
+    second: bioshock sprite sheet_4
+  - first:
+      213: -7186176841758920652
+    second: bioshock sprite sheet_5
+  - first:
+      213: 765208178749268710
+    second: bioshock sprite sheet_6
+  - first:
+      213: 8105642786938831056
+    second: bioshock sprite sheet_7
+  - first:
+      213: 7406449009378408494
+    second: bioshock sprite sheet_8
+  - first:
+      213: 6674185401455593928
+    second: bioshock sprite sheet_9
+  - first:
+      213: 4151936829802866529
+    second: bioshock sprite sheet_10
+  - first:
+      213: 2789452751353291332
+    second: bioshock sprite sheet_11
+  - first:
+      213: 1900250198506669093
+    second: bioshock sprite sheet_12
+  - first:
+      213: -5850789844034857031
+    second: bioshock sprite sheet_13
+  - first:
+      213: -2070914002473954721
+    second: bioshock sprite sheet_14
+  - first:
+      213: -7425119034364321629
+    second: bioshock sprite sheet_15
+  - first:
+      213: 6166324184327170454
+    second: bioshock sprite sheet_16
+  - first:
+      213: -8803133165686378904
+    second: bioshock sprite sheet_17
+  - first:
+      213: -7926127925120171156
+    second: bioshock sprite sheet_18
+  - first:
+      213: -1099189271797060127
+    second: bioshock sprite sheet_19
+  - first:
+      213: 3552204954137863879
+    second: bioshock sprite sheet_20
+  - first:
+      213: 2153362752938044957
+    second: bioshock sprite sheet_21
+  - first:
+      213: -3144324369435559688
+    second: bioshock sprite sheet_22
+  - first:
+      213: -5203433883017052076
+    second: bioshock sprite sheet_23
+  - first:
+      213: -4928053115805202809
+    second: bioshock sprite sheet_24
+  - first:
+      213: -7304712173019304550
+    second: bioshock sprite sheet_25
+  - first:
+      213: -791390516092769497
+    second: bioshock sprite sheet_26
+  - first:
+      213: -6911619897192278066
+    second: bioshock sprite sheet_27
+  - first:
+      213: 6320605096113049243
+    second: bioshock sprite sheet_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bioshock sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 708
+        width: 125
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db1884d89e579850800000000000000
+      internalID: 6383675007314697170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 713
+        width: 134
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b788a0a032561af20800000000000000
+      internalID: 3432135592199751803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 701
+        width: 122
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e90122adaa7b29d0800000000000000
+      internalID: -2798007857312626203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 704
+        width: 134
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff562005a5e56870800000000000000
+      internalID: 8675592754034008058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 710
+        width: 122
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1117e3bb877c870800000000000000
+      internalID: 8703057550518587875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 546
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43032d58c32954c90800000000000000
+      internalID: -7186176841758920652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 545
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2e299c8c09e9a00800000000000000
+      internalID: 765208178749268710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 542
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d042bf4b270d7070800000000000000
+      internalID: 8105642786938831056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 543
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e283b0b022ef8c660800000000000000
+      internalID: 7406449009378408494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 378
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9cbd2e2487f9c50800000000000000
+      internalID: 6674185401455593928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 376
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167e24e7c84ae9930800000000000000
+      internalID: 4151936829802866529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 374
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442262a8f7026b620800000000000000
+      internalID: 2789452751353291332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 370
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5240b52dc7b0f5a10800000000000000
+      internalID: 1900250198506669093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 193
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7d6dab2a1ddcea0800000000000000
+      internalID: -5850789844034857031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 210
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a029b5049da4f890800000000000000
+      internalID: -7425119034364321629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 207
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699a8b0dc2f239550800000000000000
+      internalID: 6166324184327170454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 176
+        width: 172
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6388e285acb00290800000000000000
+      internalID: -7926127925120171156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 58
+        width: 124
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1eed69c30842ed10800000000000000
+      internalID: 2153362752938044957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 59
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8703535ad1d54d0800000000000000
+      internalID: -3144324369435559688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 35
+        width: 172
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450898ec370b9c7b0800000000000000
+      internalID: -5203433883017052076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bioshock sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 15
+        width: 142
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d66bc0bf270aa90800000000000000
+      internalID: -7304712173019304550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4b5765fecc87db443ada5f54e80d25f6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bioshock sprite sheet_0: 6383675007314697170
+      bioshock sprite sheet_1: 3432135592199751803
+      bioshock sprite sheet_10: 4151936829802866529
+      bioshock sprite sheet_11: 2789452751353291332
+      bioshock sprite sheet_12: 1900250198506669093
+      bioshock sprite sheet_13: -5850789844034857031
+      bioshock sprite sheet_14: -2070914002473954721
+      bioshock sprite sheet_15: -7425119034364321629
+      bioshock sprite sheet_16: 6166324184327170454
+      bioshock sprite sheet_17: -8803133165686378904
+      bioshock sprite sheet_18: -7926127925120171156
+      bioshock sprite sheet_19: -1099189271797060127
+      bioshock sprite sheet_2: -2798007857312626203
+      bioshock sprite sheet_20: 3552204954137863879
+      bioshock sprite sheet_21: 2153362752938044957
+      bioshock sprite sheet_22: -3144324369435559688
+      bioshock sprite sheet_23: -5203433883017052076
+      bioshock sprite sheet_24: -4928053115805202809
+      bioshock sprite sheet_25: -7304712173019304550
+      bioshock sprite sheet_26: -791390516092769497
+      bioshock sprite sheet_27: -6911619897192278066
+      bioshock sprite sheet_28: 6320605096113049243
+      bioshock sprite sheet_3: 8675592754034008058
+      bioshock sprite sheet_4: 8703057550518587875
+      bioshock sprite sheet_5: -7186176841758920652
+      bioshock sprite sheet_6: 765208178749268710
+      bioshock sprite sheet_7: 8105642786938831056
+      bioshock sprite sheet_8: 7406449009378408494
+      bioshock sprite sheet_9: 6674185401455593928
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
