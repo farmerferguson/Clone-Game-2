@@ -184,7 +184,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bioshock sprite sheet_0
+      name: HiddenTile
       rect:
         serializedVersion: 2
         x: 122
@@ -206,7 +206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_1
+      name: EndNode_E
       rect:
         serializedVersion: 2
         x: 303
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_2
+      name: EndNode_N
       rect:
         serializedVersion: 2
         x: 468
@@ -250,7 +250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_3
+      name: EndNode_W
       rect:
         serializedVersion: 2
         x: 634
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_4
+      name: EndNode_S
       rect:
         serializedVersion: 2
         x: 803
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_5
+      name: Elbow_WN
       rect:
         serializedVersion: 2
         x: 121
@@ -316,7 +316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_6
+      name: Elbow_SW
       rect:
         serializedVersion: 2
         x: 297
@@ -338,7 +338,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_7
+      name: Elbow_ES
       rect:
         serializedVersion: 2
         x: 469
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_8
+      name: Elbow_NE
       rect:
         serializedVersion: 2
         x: 666
@@ -382,7 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_9
+      name: ElbowConnected_WN
       rect:
         serializedVersion: 2
         x: 127
@@ -404,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_10
+      name: ElbowConnected_SW
       rect:
         serializedVersion: 2
         x: 297
@@ -426,7 +426,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_11
+      name: ElbowConnected_ES
       rect:
         serializedVersion: 2
         x: 471
@@ -448,7 +448,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_12
+      name: ElbowConnected_NE
       rect:
         serializedVersion: 2
         x: 665
@@ -470,7 +470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_13
+      name: StartNode_W
       rect:
         serializedVersion: 2
         x: 477
@@ -492,7 +492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_15
+      name: Straight_NS
       rect:
         serializedVersion: 2
         x: 119
@@ -514,7 +514,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_16
+      name: Straight_EW
       rect:
         serializedVersion: 2
         x: 308
@@ -536,7 +536,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_18
+      name: StartNode_N
       rect:
         serializedVersion: 2
         x: 641
@@ -558,7 +558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_21
+      name: StraightConnected_NS
       rect:
         serializedVersion: 2
         x: 128
@@ -580,7 +580,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_22
+      name: StraightConnected_EW
       rect:
         serializedVersion: 2
         x: 306
@@ -602,11 +602,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_23
+      name: StartNode_S
       rect:
         serializedVersion: 2
-        x: 464
-        y: 35
+        x: 461
+        y: 29
         width: 172
         height: 142
       alignment: 0
@@ -624,7 +624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bioshock sprite sheet_25
+      name: StartNode_E
       rect:
         serializedVersion: 2
         x: 659
@@ -659,35 +659,35 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bioshock sprite sheet_0: 6383675007314697170
-      bioshock sprite sheet_1: 3432135592199751803
-      bioshock sprite sheet_10: 4151936829802866529
-      bioshock sprite sheet_11: 2789452751353291332
-      bioshock sprite sheet_12: 1900250198506669093
-      bioshock sprite sheet_13: -5850789844034857031
+      ElbowConnected_ES: 2789452751353291332
+      ElbowConnected_NE: 1900250198506669093
+      ElbowConnected_SW: 4151936829802866529
+      ElbowConnected_WN: 6674185401455593928
+      Elbow_ES: 8105642786938831056
+      Elbow_NE: 7406449009378408494
+      Elbow_SW: 765208178749268710
+      Elbow_WN: -7186176841758920652
+      EndNode_E: 3432135592199751803
+      EndNode_N: -2798007857312626203
+      EndNode_S: 8703057550518587875
+      EndNode_W: 8675592754034008058
+      HiddenTile: 6383675007314697170
+      StartNode_E: -7304712173019304550
+      StartNode_N: -7926127925120171156
+      StartNode_S: -5203433883017052076
+      StartNode_W: -5850789844034857031
+      StraightConnected_EW: -3144324369435559688
+      StraightConnected_NS: 2153362752938044957
+      Straight_EW: 6166324184327170454
+      Straight_NS: -7425119034364321629
       bioshock sprite sheet_14: -2070914002473954721
-      bioshock sprite sheet_15: -7425119034364321629
-      bioshock sprite sheet_16: 6166324184327170454
       bioshock sprite sheet_17: -8803133165686378904
-      bioshock sprite sheet_18: -7926127925120171156
       bioshock sprite sheet_19: -1099189271797060127
-      bioshock sprite sheet_2: -2798007857312626203
       bioshock sprite sheet_20: 3552204954137863879
-      bioshock sprite sheet_21: 2153362752938044957
-      bioshock sprite sheet_22: -3144324369435559688
-      bioshock sprite sheet_23: -5203433883017052076
       bioshock sprite sheet_24: -4928053115805202809
-      bioshock sprite sheet_25: -7304712173019304550
       bioshock sprite sheet_26: -791390516092769497
       bioshock sprite sheet_27: -6911619897192278066
       bioshock sprite sheet_28: 6320605096113049243
-      bioshock sprite sheet_3: 8675592754034008058
-      bioshock sprite sheet_4: 8703057550518587875
-      bioshock sprite sheet_5: -7186176841758920652
-      bioshock sprite sheet_6: 765208178749268710
-      bioshock sprite sheet_7: 8105642786938831056
-      bioshock sprite sheet_8: 7406449009378408494
-      bioshock sprite sheet_9: 6674185401455593928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheet2_0
+      name: StraightFilled_NS
       rect:
         serializedVersion: 2
         x: 143
@@ -126,7 +126,7 @@ TextureImporter:
         width: 123
         height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,7 +140,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_1
+      name: StraightFilled_EW
       rect:
         serializedVersion: 2
         x: 307
@@ -148,7 +148,7 @@ TextureImporter:
         width: 124
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,7 +162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_2
+      name: ElbowFilled_WN
       rect:
         serializedVersion: 2
         x: 124
@@ -170,7 +170,7 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,7 +184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_3
+      name: ElbowFilled_SW
       rect:
         serializedVersion: 2
         x: 324
@@ -192,7 +192,7 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,15 +206,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_4
+      name: ElbowFilled_NE
       rect:
         serializedVersion: 2
         x: 523
-        y: 532
+        y: 530
         width: 125
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_5
+      name: ElbowFilled_ES
       rect:
         serializedVersion: 2
         x: 723
@@ -236,7 +236,7 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet2_6
+      name: Blocker
       rect:
         serializedVersion: 2
         x: 121
@@ -258,7 +258,7 @@ TextureImporter:
         width: 130
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 69c7d4bed7701404bb6dbb0f71b84d6f
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spriteSheet2_0: -2686805190080998767
-      spriteSheet2_1: -7338667522180308094
-      spriteSheet2_2: -8623723103316482744
-      spriteSheet2_3: 2074384909240358870
-      spriteSheet2_4: 8181276244199624201
-      spriteSheet2_5: 1166044132801114170
-      spriteSheet2_6: 5414795299866140169
+      Blocker: 5414795299866140169
+      ElbowFilled_ES: 1166044132801114170
+      ElbowFilled_NE: 8181276244199624201
+      ElbowFilled_SW: 2074384909240358870
+      ElbowFilled_WN: -8623723103316482744
+      StraightFilled_EW: -7338667522180308094
+      StraightFilled_NS: -2686805190080998767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
