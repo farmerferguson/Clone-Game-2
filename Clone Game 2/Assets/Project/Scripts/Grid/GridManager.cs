@@ -1,5 +1,6 @@
 using PipeHack.Data;
 using PipeHack.Tiles;
+using PipeHack.Validation;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -233,6 +234,10 @@ namespace PipeHack.Grid
 
             a.RefreshVisual();
             b.RefreshVisual();
+
+            bool isSolved = PathValidator.ValidatePath(this);
+            Debug.Log($"[PathValidator] Solved: {isSolved}");
+
 
             // TODO: notify Flow Validation system that the grid state changed,
             // e.g. via an event: OnGridChanged?.Invoke();
