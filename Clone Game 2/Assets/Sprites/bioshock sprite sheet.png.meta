@@ -474,9 +474,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 477
-        y: 193
-        width: 142
-        height: 172
+        y: 207
+        width: 141
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,10 +539,10 @@ TextureImporter:
       name: StartNode_N
       rect:
         serializedVersion: 2
-        x: 641
-        y: 176
-        width: 172
-        height: 157
+        x: 651
+        y: 199
+        width: 152
+        height: 134
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,10 +605,10 @@ TextureImporter:
       name: StartNode_S
       rect:
         serializedVersion: 2
-        x: 461
-        y: 29
-        width: 172
-        height: 142
+        x: 479
+        y: 34
+        width: 145
+        height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -627,10 +627,10 @@ TextureImporter:
       name: StartNode_E
       rect:
         serializedVersion: 2
-        x: 659
-        y: 15
-        width: 142
-        height: 160
+        x: 661
+        y: 35
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

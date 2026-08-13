@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8a588f65f5cc524ea5792db3065d720, type: 3}
-  m_Name: Straight_NS
+  m_Name: Blocker
   m_EditorClassIdentifier: 
-  pieceId: Straight_NS
-  category: 0
-  openSides: 5
-  revealedSprite: {fileID: -7425119034364321629, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
-  connectedSprite: {fileID: 2153362752938044957, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
-  filledSprite: {fileID: -2686805190080998767, guid: fbf8b05c1a8431e469c5cafc25347265, type: 3}
+  pieceId: Blocker
+  category: 2
+  openSides: 0
+  revealedSprite: {fileID: 5414795299866140169, guid: fbf8b05c1a8431e469c5cafc25347265, type: 3}

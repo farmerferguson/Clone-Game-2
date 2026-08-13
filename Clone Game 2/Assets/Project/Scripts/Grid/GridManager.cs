@@ -2,6 +2,7 @@ using PipeHack.Data;
 using PipeHack.Tiles;
 using PipeHack.Validation;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 namespace PipeHack.Grid
@@ -24,6 +25,16 @@ namespace PipeHack.Grid
         [SerializeField] private EdgeNodeView edgeNodePrefab;
         [SerializeField] private Transform gridRoot;
         [SerializeField] private float cellSize = 1f;
+
+        [Header("Path Feedback")]
+        [Tooltip("Delay before the fill animation starts, after a path completes.")]
+        [SerializeField] private float fillStartDelay = 0.5f;
+        [Tooltip("Delay between each tile filling in, once the animation starts.")]
+        [SerializeField] private float fillStepDelay = 0.15f;
+
+        private Coroutine _fillCoroutine;
+        private List<Vector2Int> _lastPathCells = new List<Vector2Int>();
+        private List<Vector2Int> _lastConnectedCells = new List<Vector2Int>();
 
         [Header("Camera")]
         [Tooltip("Camera to auto-fit around the grid. Defaults to Camera.main if left empty.")]
@@ -48,25 +59,34 @@ namespace PipeHack.Grid
             _grid = new TileData[gridSize, gridSize];
             _views = new TileView[gridSize, gridSize];
 
-            // 1. Fill every cell with a random pipe piece.
+            // 1. Decide Start/End first - fill loop below needs to know their
+            //    attach cells so it can bar blockers from spawning there.
+            PlaceStartAndEnd();
+
+            // 2. Fill every cell with a random pipe piece.
             for (int x = 0; x < gridSize; x++)
             {
                 for (int y = 0; y < gridSize; y++)
                 {
-                    PipeDefinition piece = pipePool[Random.Range(0, pipePool.Count)];
                     var pos = new Vector2Int(x, y);
-                    _grid[x, y] = new TileData(pos, piece);
+                    bool isAttachCell = pos == _startNode.AttachCell || pos == _endNode.AttachCell;
+                    _grid[x, y] = new TileData(pos, PickPiece(excludeBlockers: isAttachCell));
                 }
             }
-
-            // 2. Pick Start/End on the perimeter, respecting minimum distance.
-            PlaceStartAndEnd();
 
             // 3. Spawn visuals.
             SpawnViews();
 
             // 4. Fit the camera to whatever size grid we just built.
             FitCameraToGrid();
+        }
+        private PipeDefinition PickPiece(bool excludeBlockers)
+        {
+            if (!excludeBlockers)
+                return pipePool[Random.Range(0, pipePool.Count)];
+
+            var nonBlockerPool = pipePool.FindAll(p => p.category != PipeCategory.Blocker);
+            return nonBlockerPool[Random.Range(0, nonBlockerPool.Count)];
         }
 
         /// <summary>
@@ -145,10 +165,9 @@ namespace PipeHack.Grid
             Vector3 attachCellWorldPos = new Vector3(node.AttachCell.x * cellSize, node.AttachCell.y * cellSize, 0f);
             Vector2Int offset = GridSideUtil.ToOffset(node.Side);
             Vector3 worldPos = attachCellWorldPos + new Vector3(offset.x, offset.y, 0f) * cellSize;
-            float rotation = GridSideUtil.ToInwardRotation(node.Side);
 
             EdgeNodeView view = Instantiate(edgeNodePrefab, worldPos, Quaternion.identity, gridRoot);
-            view.Initialize(node, worldPos, rotation, cellSize);
+            view.Initialize(node, worldPos, cellSize);
         }
 
         /// <summary>
@@ -206,6 +225,10 @@ namespace PipeHack.Grid
                 return;
             }
 
+            // Blockers can be revealed but never selected or swapped.
+            if (view.Data.IsBlocker)
+                return;
+
             if (_firstSelected == null)
             {
                 _firstSelected = view;
@@ -215,7 +238,6 @@ namespace PipeHack.Grid
 
             if (_firstSelected == view)
             {
-                // Clicked the same tile twice - deselect.
                 view.SetSelected(false);
                 _firstSelected = null;
                 return;
@@ -235,12 +257,50 @@ namespace PipeHack.Grid
             a.RefreshVisual();
             b.RefreshVisual();
 
-            bool isSolved = PathValidator.ValidatePath(this);
-            Debug.Log($"[PathValidator] Solved: {isSolved}");
 
+            EvaluatePathState();
+        }
+        private void EvaluatePathState()
+        {
+            if (_fillCoroutine != null)
+            {
+                StopCoroutine(_fillCoroutine);
+                _fillCoroutine = null;
+            }
 
-            // TODO: notify Flow Validation system that the grid state changed,
-            // e.g. via an event: OnGridChanged?.Invoke();
+            // Clear whatever was previously highlighted/filled before re-evaluating.
+            foreach (var cell in _lastConnectedCells)
+                _views[cell.x, cell.y].ResetToRevealed();
+            _lastConnectedCells.Clear();
+            _lastPathCells.Clear();
+
+            // Highlight every tile reachable from Start, regardless of whether it reaches End.
+            List<Vector2Int> connectedCells = PathValidator.GetConnectedFromStart(this);
+            _lastConnectedCells = connectedCells;
+            foreach (var cell in connectedCells)
+                _views[cell.x, cell.y].SetConnected();
+
+            // Separately, check whether Start actually reaches End - only this triggers the fill.
+            PathResult result = PathValidator.ValidatePath(this);
+            if (!result.IsConnected) return;
+
+            _lastPathCells = result.PathCells;
+            _fillCoroutine = StartCoroutine(FillSequence(_lastPathCells));
+        }
+
+        private IEnumerator FillSequence(List<Vector2Int> pathCells)
+        {
+            yield return new WaitForSeconds(fillStartDelay);
+
+            foreach (var cell in pathCells)
+            {
+                _views[cell.x, cell.y].SetFilled();
+                yield return new WaitForSeconds(fillStepDelay);
+            }
+
+            _fillCoroutine = null;
+
+            // TODO: this is where a win-state notification belongs.
         }
 
         public TileData[,] GetGridData() => _grid;

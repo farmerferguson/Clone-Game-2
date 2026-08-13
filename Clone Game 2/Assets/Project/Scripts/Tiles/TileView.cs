@@ -51,11 +51,30 @@ namespace PipeHack.Tiles
             if (!Data.IsRevealed)
             {
                 _renderer.sprite = hiddenSprite;
-                return;
+            }
+            else
+            {
+                _renderer.sprite = Data.Pipe.revealedSprite;
             }
 
-            _renderer.sprite = Data.Pipe.revealedSprite;
+            FitSpriteToCell();
+        }
 
+        public void SetConnected()
+        {
+            _renderer.sprite = Data.Pipe.connectedSprite != null ? Data.Pipe.connectedSprite : Data.Pipe.revealedSprite;
+            FitSpriteToCell();
+        }
+
+        public void SetFilled()
+        {
+            _renderer.sprite = Data.Pipe.filledSprite != null ? Data.Pipe.filledSprite : Data.Pipe.revealedSprite;
+            FitSpriteToCell();
+        }
+
+        public void ResetToRevealed()
+        {
+            _renderer.sprite = Data.Pipe.revealedSprite;
             FitSpriteToCell();
         }
 

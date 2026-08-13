@@ -6,12 +6,8 @@ namespace PipeHack.Data
     public enum PipeCategory
     {
         Straight,
-        Elbow
-        // Blocker,
-        // Alarm
-        // Bomb
-        //
-        // added later once the base system works
+        Elbow, 
+        Blocker
     }
 
     /// <summary>
@@ -24,7 +20,12 @@ namespace PipeHack.Data
     {
         public string pieceId;              
         public PipeCategory category;
-        public PipeDirection openSides;     
+        public PipeDirection openSides;
+
+
+        [Header("State sprites")]
         public Sprite revealedSprite;
+        public Sprite connectedSprite; // shown the instant this tile becomes part of a completed Start->End path
+        public Sprite filledSprite;    // shown once the fill animation reaches this tile
     }
 }

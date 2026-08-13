@@ -15,4 +15,6 @@ MonoBehaviour:
   pieceId: Elbow_ES
   category: 1
   openSides: 6
-  revealedSprite: {fileID: 21300000, guid: 66c9facd0ffe267479228811d4a0fc0a, type: 3}
+  revealedSprite: {fileID: 8105642786938831056, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  connectedSprite: {fileID: 2789452751353291332, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  filledSprite: {fileID: 1166044132801114170, guid: fbf8b05c1a8431e469c5cafc25347265, type: 3}

@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a78ddf9a5f46e1e4991a572003829796, type: 2}
   - {fileID: 11400000, guid: 8af9fd9c61aa52749a8be1b8f565f91c, type: 2}
   - {fileID: 11400000, guid: d1931891fee85e44b9c4ec3920587622, type: 2}
+  - {fileID: 11400000, guid: 037806d89ab99ec409e80f8becf3d98a, type: 2}
   tilePrefab: {fileID: 2847838985540460229, guid: da55115d8b1c39945a2d7de0a5c09f01, type: 3}
   edgeNodePrefab: {fileID: 6502329460293125769, guid: 9c1083faa0e0ff54883e73a718cb6f29, type: 3}
   gridRoot: {fileID: 3285613108004287778}

@@ -100,4 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf7ff3e4d31b743bcc859429addc1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeSprite: {fileID: 21300000, guid: 975f69c12a2749341ac18bfe512a4a2a, type: 3}
+  startNorthSprite: {fileID: -5203433883017052076, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  startEastSprite: {fileID: -5850789844034857031, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  startSouthSprite: {fileID: -7926127925120171156, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  startWestSprite: {fileID: -7304712173019304550, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  endNorthSprite: {fileID: 8703057550518587875, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  endEastSprite: {fileID: 8675592754034008058, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  endSouthSprite: {fileID: -2798007857312626203, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  endWestSprite: {fileID: 3432135592199751803, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4583b53f67d4e4d995f698f70fadb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiddenSprite: {fileID: 21300000, guid: ab63d8e350043b440ade05cc5bd08edc, type: 3}
+  hiddenSprite: {fileID: 6383675007314697170, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
   selectionOutline: {fileID: 0}
 --- !u!61 &-5298603867286568764
 BoxCollider2D:

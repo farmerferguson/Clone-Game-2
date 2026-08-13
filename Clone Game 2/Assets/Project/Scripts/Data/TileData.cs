@@ -13,6 +13,7 @@ namespace PipeHack.Data
         public Vector2Int GridPosition { get; private set; }
         public PipeDefinition Pipe { get; set; }
         public bool IsRevealed { get; set; }
+        public bool IsBlocker => Pipe != null && Pipe.category == PipeCategory.Blocker;
 
         public TileData(Vector2Int gridPosition, PipeDefinition pipe)
         {

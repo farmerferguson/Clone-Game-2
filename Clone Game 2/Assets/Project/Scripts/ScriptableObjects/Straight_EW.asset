@@ -15,4 +15,6 @@ MonoBehaviour:
   pieceId: Straight_EW
   category: 0
   openSides: 10
-  revealedSprite: {fileID: 21300000, guid: 1f6d2f613a056434fae52cd0bcef014b, type: 3}
+  revealedSprite: {fileID: 6166324184327170454, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
+  connectedSprite: {fileID: -7338667522180308094, guid: fbf8b05c1a8431e469c5cafc25347265, type: 3}
+  filledSprite: {fileID: -3144324369435559688, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
