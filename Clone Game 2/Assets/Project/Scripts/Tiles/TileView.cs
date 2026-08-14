@@ -78,6 +78,12 @@ namespace PipeHack.Tiles
             FitSpriteToCell();
         }
 
+        public void Hide()
+        {
+            Data.IsRevealed = false;
+            RefreshVisual();
+        }
+
         /// <summary>
         /// Scales this tile's transform so whatever sprite is currently
         /// assigned renders at exactly cellSize x cellSize world units -

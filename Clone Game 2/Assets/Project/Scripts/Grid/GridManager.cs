@@ -10,7 +10,7 @@ namespace PipeHack.Grid
     public class GridManager : MonoBehaviour
     {
         [Header("Level Config")]
-        [Tooltip("Grid size for this level. Level 1 = 5, Level 2 = 6, Level 3 = 7.")]
+        [Tooltip("Grid size for this level. Level 1 = 5, Level 2 = 6, Level 3 = 7. Also doubles as the open-tile limit for the memory mechanic.")]
         [SerializeField] private int gridSize = 5;
 
         [Tooltip("Minimum distance (in grid steps) required between Start and End.")]
@@ -48,6 +48,11 @@ namespace PipeHack.Grid
         private EdgeNodeData _startNode;
         private EdgeNodeData _endNode;
 
+        // Tracks reveal order for the memory mechanic: only tiles that are
+        // revealed AND not yet connected to Start count toward the open-tile
+        // limit, and only those are eligible to be auto-hidden.
+        private List<TileView> _revealOrder = new List<TileView>();
+
         private void Start()
         {
             GenerateLevel(gridSize);
@@ -58,6 +63,7 @@ namespace PipeHack.Grid
             gridSize = size;
             _grid = new TileData[gridSize, gridSize];
             _views = new TileView[gridSize, gridSize];
+            _revealOrder.Clear();
 
             // 1. Decide Start/End first - fill loop below needs to know their
             //    attach cells so it can bar blockers from spawning there.
@@ -80,6 +86,7 @@ namespace PipeHack.Grid
             // 4. Fit the camera to whatever size grid we just built.
             FitCameraToGrid();
         }
+
         private PipeDefinition PickPiece(bool excludeBlockers)
         {
             if (!excludeBlockers)
@@ -221,7 +228,7 @@ namespace PipeHack.Grid
         {
             if (!view.Data.IsRevealed)
             {
-                view.Reveal();
+                RevealTile(view);
                 return;
             }
 
@@ -248,6 +255,17 @@ namespace PipeHack.Grid
             _firstSelected = null;
         }
 
+        private void RevealTile(TileView view)
+        {
+            view.Reveal();
+            _revealOrder.Add(view);
+
+            // A freshly revealed tile could already be correctly placed and
+            // connected without any swap happening, so re-evaluate here too,
+            // not just after swaps.
+            EvaluatePathState();
+        }
+
         private void SwapPieces(TileView a, TileView b)
         {
             PipeDefinition temp = a.Data.Pipe;
@@ -257,9 +275,9 @@ namespace PipeHack.Grid
             a.RefreshVisual();
             b.RefreshVisual();
 
-
             EvaluatePathState();
         }
+
         private void EvaluatePathState()
         {
             if (_fillCoroutine != null)
@@ -280,12 +298,60 @@ namespace PipeHack.Grid
             foreach (var cell in connectedCells)
                 _views[cell.x, cell.y].SetConnected();
 
+            // Connected tiles are "locked in" and exempt from the memory
+            // mechanic's open-tile limit - enforce the cap on everything else.
+            EnforceOpenTileLimit();
+
             // Separately, check whether Start actually reaches End - only this triggers the fill.
             PathResult result = PathValidator.ValidatePath(this);
             if (!result.IsConnected) return;
 
             _lastPathCells = result.PathCells;
             _fillCoroutine = StartCoroutine(FillSequence(_lastPathCells));
+        }
+
+        /// <summary>
+        /// Memory mechanic: only gridSize tiles can be open (revealed and
+        /// NOT yet connected to Start) at once. Locked-in (connected) tiles
+        /// never count and are never evicted. When over the cap, the
+        /// oldest-revealed unlocked tile is auto-hidden, repeated until back
+        /// within the limit.
+        /// </summary>
+        private void EnforceOpenTileLimit()
+        {
+            var lockedSet = new HashSet<Vector2Int>(_lastConnectedCells);
+
+            int openUnlockedCount = 0;
+            foreach (var v in _revealOrder)
+                if (v.Data.IsRevealed && !lockedSet.Contains(v.Data.GridPosition))
+                    openUnlockedCount++;
+
+            while (openUnlockedCount > gridSize)
+            {
+                TileView toHide = null;
+                foreach (var v in _revealOrder)
+                {
+                    if (!v.Data.IsRevealed) continue;
+                    if (lockedSet.Contains(v.Data.GridPosition)) continue;
+                    toHide = v;
+                    break;
+                }
+
+                if (toHide == null) break; // everything still open is locked in - nothing left to evict
+
+                // If the tile about to be hidden is mid-selection for a swap,
+                // cancel that selection so _firstSelected never points at a
+                // tile that's no longer revealed.
+                if (toHide == _firstSelected)
+                {
+                    toHide.SetSelected(false);
+                    _firstSelected = null;
+                }
+
+                toHide.Hide();
+                _revealOrder.Remove(toHide);
+                openUnlockedCount--;
+            }
         }
 
         private IEnumerator FillSequence(List<Vector2Int> pathCells)
