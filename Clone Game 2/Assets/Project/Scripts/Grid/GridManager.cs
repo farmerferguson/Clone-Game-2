@@ -1,6 +1,7 @@
 using PipeHack.Data;
 using PipeHack.Tiles;
 using PipeHack.Validation;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -53,6 +54,18 @@ namespace PipeHack.Grid
         // limit, and only those are eligible to be auto-hidden.
         private List<TileView> _revealOrder = new List<TileView>();
 
+        // Fired once the win fill sequence completes. LevelFlowManager and
+        // LevelTimer both subscribe to this rather than GridManager knowing
+        // anything about scenes or countdowns.
+        public event Action OnLevelWon;
+
+        // True once the level has ended (won or timed out). Blocks further
+        // tile interaction so the board can't keep being played after that.
+        private bool _levelEnded;
+
+        /// <summary>Called externally (e.g. by LevelFailUI on timeout) to stop board interaction.</summary>
+        public void LockBoard() => _levelEnded = true;
+
         private void Start()
         {
             GenerateLevel(gridSize);
@@ -90,10 +103,10 @@ namespace PipeHack.Grid
         private PipeDefinition PickPiece(bool excludeBlockers)
         {
             if (!excludeBlockers)
-                return pipePool[Random.Range(0, pipePool.Count)];
+                return pipePool[UnityEngine.Random.Range(0, pipePool.Count)];
 
             var nonBlockerPool = pipePool.FindAll(p => p.category != PipeCategory.Blocker);
-            return nonBlockerPool[Random.Range(0, nonBlockerPool.Count)];
+            return nonBlockerPool[UnityEngine.Random.Range(0, nonBlockerPool.Count)];
         }
 
         /// <summary>
@@ -123,7 +136,7 @@ namespace PipeHack.Grid
         {
             var candidates = GetEdgeAttachCandidates();
 
-            var startCandidate = candidates[Random.Range(0, candidates.Count)];
+            var startCandidate = candidates[UnityEngine.Random.Range(0, candidates.Count)];
 
             // Only keep candidates whose CELL (ignoring which side) is far
             // enough from Start's cell - distance is measured between the
@@ -144,7 +157,7 @@ namespace PipeHack.Grid
                     if (c.cell != startCandidate.cell) validEndCandidates.Add(c);
             }
 
-            var endCandidate = validEndCandidates[Random.Range(0, validEndCandidates.Count)];
+            var endCandidate = validEndCandidates[UnityEngine.Random.Range(0, validEndCandidates.Count)];
 
             _startNode = new EdgeNodeData(startCandidate.cell, startCandidate.side, isStart: true);
             _endNode = new EdgeNodeData(endCandidate.cell, endCandidate.side, isStart: false);
@@ -226,6 +239,8 @@ namespace PipeHack.Grid
         /// </summary>
         public void OnTileClicked(TileView view)
         {
+            if (_levelEnded) return;
+
             if (!view.Data.IsRevealed)
             {
                 RevealTile(view);
@@ -234,6 +249,10 @@ namespace PipeHack.Grid
 
             // Blockers can be revealed but never selected or swapped.
             if (view.Data.IsBlocker)
+                return;
+
+            // Locked tiles can't be selected/swapped - double-tap to unlock first.
+            if (view.IsLocked)
                 return;
 
             if (_firstSelected == null)
@@ -251,8 +270,36 @@ namespace PipeHack.Grid
             }
 
             SwapPieces(_firstSelected, view);
-            _firstSelected.SetSelected(false);
-            _firstSelected = null;
+
+            // SwapPieces re-evaluates the open-tile limit, which can evict
+            // _firstSelected itself (and already clears its selection visual
+            // when it does) - only touch it here if it's still set.
+            if (_firstSelected != null)
+            {
+                _firstSelected.SetSelected(false);
+                _firstSelected = null;
+            }
+        }
+
+        /// <summary>
+        /// Called by TileView on a detected double-tap. Locking a tile
+        /// protects it from the open-tile eviction limit and from being
+        /// selected for a swap, until it's double-tapped again to unlock.
+        /// </summary>
+        public void ToggleLock(TileView view)
+        {
+            if (_levelEnded) return;
+            if (!view.Data.IsRevealed || view.Data.IsBlocker) return;
+
+            bool newLockState = !view.IsLocked;
+            view.SetLocked(newLockState);
+
+            if (newLockState && view == _firstSelected)
+            {
+                // Locking a tile that was mid-selection for a swap cancels that selection.
+                view.SetSelected(false);
+                _firstSelected = null;
+            }
         }
 
         private void RevealTile(TileView view)
@@ -312,10 +359,10 @@ namespace PipeHack.Grid
 
         /// <summary>
         /// Memory mechanic: only gridSize tiles can be open (revealed and
-        /// NOT yet connected to Start) at once. Locked-in (connected) tiles
-        /// never count and are never evicted. When over the cap, the
-        /// oldest-revealed unlocked tile is auto-hidden, repeated until back
-        /// within the limit.
+        /// NOT yet connected to Start, and NOT manually locked) at once.
+        /// Locked-in (connected) tiles and player-locked tiles never count
+        /// and are never evicted. When over the cap, the oldest-revealed
+        /// eligible tile is auto-hidden, repeated until back within limit.
         /// </summary>
         private void EnforceOpenTileLimit()
         {
@@ -323,7 +370,7 @@ namespace PipeHack.Grid
 
             int openUnlockedCount = 0;
             foreach (var v in _revealOrder)
-                if (v.Data.IsRevealed && !lockedSet.Contains(v.Data.GridPosition))
+                if (v.Data.IsRevealed && !v.IsLocked && !lockedSet.Contains(v.Data.GridPosition))
                     openUnlockedCount++;
 
             while (openUnlockedCount > gridSize)
@@ -332,6 +379,7 @@ namespace PipeHack.Grid
                 foreach (var v in _revealOrder)
                 {
                     if (!v.Data.IsRevealed) continue;
+                    if (v.IsLocked) continue;
                     if (lockedSet.Contains(v.Data.GridPosition)) continue;
                     toHide = v;
                     break;
@@ -366,7 +414,8 @@ namespace PipeHack.Grid
 
             _fillCoroutine = null;
 
-            // TODO: this is where a win-state notification belongs.
+            _levelEnded = true;
+            OnLevelWon?.Invoke();
         }
 
         public TileData[,] GetGridData() => _grid;

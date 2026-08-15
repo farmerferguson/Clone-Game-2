@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,6 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiddenSprite: {fileID: 6383675007314697170, guid: 3df4d9fe1d1017c4f94b9ca8155c1379, type: 3}
   selectionOutline: {fileID: 0}
+  lockIndicator: {fileID: 0}
+  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  lockedColor: {r: 1, g: 0, b: 0, a: 1}
+  doubleTapThreshold: 0.25
 --- !u!61 &-5298603867286568764
 BoxCollider2D:
   m_ObjectHideFlags: 0
