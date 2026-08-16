@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class levelSelector : MonoBehaviour
 {
+    [SerializeField] private string LevelName;
+
     public void OpenLevel()
     {
-        SceneManager.LoadScene("LevelName");
+        SceneManager.LoadScene(LevelName);
     }
 
 }
