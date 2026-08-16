@@ -19,7 +19,15 @@ namespace PipeHack.Flow
         [SerializeField] private string nextSceneName;
 
         [Tooltip("Delay after winning before loading the next scene, so the fill animation/feedback has time to finish.")]
-        [SerializeField] private float loadDelay = 1.5f;
+        [SerializeField] private float loadDelay = 3.5f;
+
+        [Tooltip("Timer for this level.")]
+        [SerializeField] private timerSystem timer;
+
+        [Tooltip("Panel that activates when a level has been won.")]
+        [SerializeField] private GameObject winDisplay;
+        [SerializeField] private winDisplayTimer winDisplayTimer;
+        [SerializeField] private saveSystem timeSave;
 
         private void OnEnable()
         {
@@ -35,11 +43,25 @@ namespace PipeHack.Flow
 
         private void HandleLevelWon()
         {
+            // stops timer as level has been won
+            if (timer != null)
+            {
+                timer.StopStopwatch();
+            }
+            
             if (string.IsNullOrEmpty(nextSceneName))
             {
                 Debug.Log("[LevelFlowManager] Final level won - no next scene configured.");
                 return;
             }
+
+            winDisplay.SetActive(true);
+
+            if (timer != null && timeSave != null)
+            {
+                timeSave.SaveTime(timer.GetTime());
+            }
+            winDisplayTimer.ShowTime();
 
             Invoke(nameof(LoadNextScene), loadDelay);
         }

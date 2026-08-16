@@ -44,7 +44,7 @@ public class timerSystem : MonoBehaviour
         stopwatchActive = false;
     }
 
-    // for star system
+    // for timer system
     public float GetTime()
     {
         return currentTime;

@@ -1680,6 +1680,7 @@ GameObject:
   - component: {fileID: 1004294611}
   - component: {fileID: 1004294613}
   - component: {fileID: 1004294612}
+  - component: {fileID: 1004294614}
   m_Layer: 5
   m_Name: lvl1
   m_TagString: Untagged
@@ -1806,6 +1807,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004294610}
   m_CullTransparentMesh: 1
+--- !u!114 &1004294614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004294610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c6e85378f68074486315361f400a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: 5X5
+  timeText: {fileID: 1188532213}
 --- !u!1 &1131802100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,6 +3760,7 @@ GameObject:
   - component: {fileID: 1820602266}
   - component: {fileID: 1820602268}
   - component: {fileID: 1820602267}
+  - component: {fileID: 1820602269}
   m_Layer: 5
   m_Name: lvl3
   m_TagString: Untagged
@@ -3871,6 +3887,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820602265}
   m_CullTransparentMesh: 1
+--- !u!114 &1820602269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820602265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c6e85378f68074486315361f400a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: 7X7
+  timeText: {fileID: 1564507443}
 --- !u!1 &1851462909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,6 +5188,7 @@ GameObject:
   - component: {fileID: 2071332816}
   - component: {fileID: 2071332818}
   - component: {fileID: 2071332817}
+  - component: {fileID: 2071332819}
   m_Layer: 5
   m_Name: lvl2
   m_TagString: Untagged
@@ -5284,6 +5315,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071332815}
   m_CullTransparentMesh: 1
+--- !u!114 &2071332819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071332815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c6e85378f68074486315361f400a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: 6X6
+  timeText: {fileID: 1851462911}
 --- !u!1 &2072530301
 GameObject:
   m_ObjectHideFlags: 0
