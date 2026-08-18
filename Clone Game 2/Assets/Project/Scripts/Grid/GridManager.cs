@@ -17,6 +17,9 @@ namespace PipeHack.Grid
         [Tooltip("Minimum distance (in grid steps) required between Start and End.")]
         [SerializeField] private int minStartEndDistance = 4;
 
+        [Tooltip("Blockers cannot spawn within this many tiles of a Start/End attach cell (in every direction, including diagonals).")]
+        [SerializeField] private int blockerExclusionRadius = 1;
+
         [Header("Piece Pool")]
         [Tooltip("All available pipe variants (straights + elbows) to randomly fill the grid with.")]
         [SerializeField] private List<PipeDefinition> pipePool;
@@ -82,14 +85,16 @@ namespace PipeHack.Grid
             //    attach cells so it can bar blockers from spawning there.
             PlaceStartAndEnd();
 
+            HashSet<Vector2Int> blockerExcluded = GetBlockerExclusionCells();
+
             // 2. Fill every cell with a random pipe piece.
             for (int x = 0; x < gridSize; x++)
             {
                 for (int y = 0; y < gridSize; y++)
                 {
                     var pos = new Vector2Int(x, y);
-                    bool isAttachCell = pos == _startNode.AttachCell || pos == _endNode.AttachCell;
-                    _grid[x, y] = new TileData(pos, PickPiece(excludeBlockers: isAttachCell));
+                    bool excludeBlockers = blockerExcluded.Contains(pos);
+                    _grid[x, y] = new TileData(pos, PickPiece(excludeBlockers));
                 }
             }
 
@@ -188,6 +193,27 @@ namespace PipeHack.Grid
 
             EdgeNodeView view = Instantiate(edgeNodePrefab, worldPos, Quaternion.identity, gridRoot);
             view.Initialize(node, worldPos, cellSize);
+        }
+
+        private HashSet<Vector2Int> GetBlockerExclusionCells()
+        {
+            var excluded = new HashSet<Vector2Int>();
+            AddNeighborhood(excluded, _startNode.AttachCell);
+            AddNeighborhood(excluded, _endNode.AttachCell);
+            return excluded;
+        }
+
+        private void AddNeighborhood(HashSet<Vector2Int> set, Vector2Int center)
+        {
+            for (int dx = -blockerExclusionRadius; dx <= blockerExclusionRadius; dx++)
+            {
+                for (int dy = -blockerExclusionRadius; dy <= blockerExclusionRadius; dy++)
+                {
+                    var cell = new Vector2Int(center.x + dx, center.y + dy);
+                    if (cell.x >= 0 && cell.x < gridSize && cell.y >= 0 && cell.y < gridSize)
+                        set.Add(cell);
+                }
+            }
         }
 
         /// <summary>
